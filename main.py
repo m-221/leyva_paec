@@ -15,7 +15,11 @@ def conectar():
 
 @app.route('/')
 def main():
-    return render_template('inicio.html')
+    return render_template('portada.html')
+
+@app.route("/inicio")
+def principal():
+    return render_template("inicio.html")
 
 
 @app.route('/imc', methods=['GET', 'POST'])

@@ -145,33 +145,14 @@
         </p>
 
         <!-- boton circulo -->
-        <button class="circle-btn" data-bs-toggle="modal" data-bs-target="#infoModal">
+        <a href="{{ url_for('imc') }}" class="circle-btn">
 
           <img src="{{ url_for('static', filename='img/boton_calcu.png') }}">
-        </button>
+
+        </a>
 
       </div>
 
-    </div>
-
-    <!-- modal info quimica -->
-    <div class="modal fade" id="infoModal" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content p-4">
-
-          <h3>Química y Salud</h3>
-
-          <p>
-            Aprende cómo los compuestos naturales se transforman en energía
-            y cómo las reacciones químicas influyen en nuestra salud y bienestar.
-          </p>
-
-          <button class="btn btn-success" data-bs-dismiss="modal">
-            Cerrar
-          </button>
-
-        </div>
-      </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
