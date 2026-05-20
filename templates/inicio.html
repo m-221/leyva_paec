@@ -128,18 +128,23 @@
     </div>
 
     <div class="card blue">
-      <div>
-        <h2>BLOG SALUD</h2>
-        <p>Consejos de salud, nutrición y herramientas como IMC y bienestar.</p>
-      </div>
-      <div class="center-icon">
-        <button class="circle-btn blue-btn">💙</button>
-      </div>
-      <div class="info-box">
-        <p>Consulta recomendaciones y publicaciones sobre salud integral.</p>
-        <button>Leer blog</button>
-      </div>
-    </div>
+  <div>
+    <h2>CALCULADORA IMC</h2>
+    <p>Calcula tu Índice de Masa Corporal usando tu peso y altura.</p>
+  </div>
+
+  <div class="center-icon">
+    <button class="circle-btn blue-btn">🧮</button>
+  </div>
+
+  <div class="info-box">
+    <p>Con esta herramienta puedes saber si estás en bajo peso, peso normal, sobrepeso u obesidad.</p>
+
+    <a href="{{ url_for('imc') }}">
+      <button>Ver calculadora</button>
+    </a>
+  </div>
+</div>
 
   </div>
 </body>

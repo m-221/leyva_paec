@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de IMC</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/imc.css') }}">
+    
+</head>
+
+<body>
+
+    <nav>
+        <h2>Calculadora de IMC</h2>
+    </nav>
+
+    <div class="contenedor">
+
+        <div class="card">
+            <div class="top-card">
+                <div class="emoji">🩺</div>
+
+                <div>
+                    <h1>Calculadora IMC</h1>
+                    <p class="texto">
+                        Ingresa tus datos y conoce tu Índice de Masa Corporal.
+                    </p>
+                </div>
+            </div>
+
+            <form method="POST">
+                <div class="campo">
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" placeholder="Ejemplo: Ramón" required>
+                </div>
+
+                <div class="fila">
+                    <div class="campo">
+                        <label>Peso kg</label>
+                        <input type="number" step="0.01" name="peso" placeholder="70" required>
+                    </div>
+
+                    <div class="campo">
+                        <label>Altura m</label>
+                        <input type="number" step="0.01" name="altura" placeholder="1.70" required>
+                    </div>
+                </div>
+
+                <button type="submit">Calcular y guardar</button>
+            </form>
+
+            {% if resultado %}
+            <div class="resultado">
+                <p class="resultado-titulo">Resultado guardado</p>
+
+                <div class="imc-numero">
+                    {{ resultado }}
+                </div>
+
+                <div class="dato">
+                    <strong>Nombre:</strong> {{ nombre }}
+                </div>
+
+                <div class="dato">
+                    <strong>Categoría:</strong> {{ categoria }}
+                </div>
+
+                <div class="imagen-imc">
+                    {% if resultado < 18.5 %}
+                        <img src="{{ url_for('static', filename='img/bajo_peso.png') }}" alt="Bajo peso">
+                    {% elif resultado >= 18.5 and resultado < 25 %}
+                        <img src="{{ url_for('static', filename='img/normal.png') }}" alt="Peso normal">
+                    {% elif resultado >= 25 and resultado < 30 %}
+                        <img src="{{ url_for('static', filename='img/sobrepeso.png') }}" alt="Sobrepeso">
+                    {% else %}
+                        <img src="{{ url_for('static', filename='img/obesidad.png') }}" alt="Obesidad">
+                    {% endif %}
+                </div>
+
+                <div class="mensaje">
+                    {% if resultado < 18.5 %}
+                        Tu IMC indica bajo peso. Un consejo sería comer más completo y balanceado, agregando proteínas, frutas y verduras.
+                    {% elif resultado >= 18.5 and resultado < 25 %}
+                        Tu IMC está en un rango normal. Vas bien, solo trata de mantener buenos hábitos como tomar agua, dormir bien y moverte.
+                    {% elif resultado >= 25 and resultado < 30 %}
+                        Tu IMC indica sobrepeso. Un consejo sería reducir comida chatarra y hacer más actividad física durante la semana.
+                    {% elif resultado >= 30 and resultado < 32 %}
+                        Tu IMC indica obesidad. Sería buena idea cuidar más la alimentación y empezar con ejercicio ligero, como caminar.
+                    {% else %}
+                        Tu IMC es mayor a 32. Lo mejor sería empezar con cambios tranquilos pero constantes: tomar más agua, reducir refrescos y caminar un poco diario.
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+
+            <a class="volver" href="/">Volver al inicio</a>
+        </div>
+
+        <div class="tabla-card">
+            <h2>Registros guardados</h2>
+
+            {% if registros %}
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Peso</th>
+                    <th>Altura</th>
+                    <th>IMC</th>
+                    <th>Categoría</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+
+                {% for r in registros %}
+                <tr>
+                    <td>{{ r.id }}</td>
+                    <td>{{ r.nombre }}</td>
+                    <td>{{ r.peso }}</td>
+                    <td>{{ r.altura }}</td>
+                    <td>{{ r.imc }}</td>
+                    <td>{{ r.categoria }}</td>
+                    <td>{{ r.fecha }}</td>
+                    <td>
+                        <a class="btn-editar" href="{{ url_for('editar', id=r.id) }}">Editar</a>
+                        <a class="btn-borrar" href="{{ url_for('borrar', id=r.id) }}">Borrar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <p class="sin-registros">Todavía no hay registros guardados.</p>
+            {% endif %}
+        </div>
+
+    </div>
+
+</body>
+</html>
