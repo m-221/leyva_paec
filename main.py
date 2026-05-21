@@ -12,6 +12,37 @@ def conectar():
         password="",
         database="salud"
     )
+    
+def crear_base_datos():
+    conexion = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password=""
+    )
+    cursor = conexion.cursor()
+    cursor.execute("CREATE DATABASE IF NOT EXISTS salud")
+    cursor.close()
+    conexion.close()
+
+
+
+def crear_tabla():
+    conexion = conectar()  
+    cursor = conexion.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS registros_imc (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            nombre VARCHAR(100) NOT NULL,
+            peso FLOAT NOT NULL,
+            altura FLOAT NOT NULL,
+            imc FLOAT NOT NULL,
+            categoria VARCHAR(50) NOT NULL,
+            fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    conexion.commit()
+    cursor.close()
+    conexion.close()
 
 @app.route('/')
 def main():
@@ -129,4 +160,6 @@ def borrar(id):
 
 
 if __name__ == "__main__":
+    crear_base_datos()  
+    crear_tabla()       
     app.run(debug=True)
