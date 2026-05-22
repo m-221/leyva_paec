@@ -52,6 +52,9 @@ def main():
 def principal():
     return render_template("inicio.html")
 
+@app.route("/quimica")
+def quimica():
+    return render_template("quimica.html")
 
 @app.route('/imc', methods=['GET', 'POST'])
 def imc():

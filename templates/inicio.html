@@ -17,10 +17,8 @@
 
     <div class="card-blog quimica">
 
-      <!-- titulo -->
       <img class="titulo-img" src="{{ url_for('static', filename='img/titulo_quimica.png') }}">
 
-      <!-- introducion -->
       <div class="texto-principal">
         <p>
           Explora la química de los alimentos: desde nutrientes y vitaminas
@@ -28,44 +26,23 @@
         </p>
       </div>
 
-      <!-- imagen centro -->
       <img class="centro" src="{{ url_for('static', filename='img/centro_quimica.png') }}">
 
-      <!-- info boton -->
       <div class="info-box">
 
         <p class="info-text">
           Haz click para explorar más información sobre química y salud.
         </p>
 
-        <!-- boton circulo -->
-        <button class="circle-btn" data-bs-toggle="modal" data-bs-target="#infoModal">
+        <!-- BOTÓN REDIRIGIENDO A QUIMICA.HTML -->
+        <a href="{{ url_for('quimica') }}" class="circle-btn">
 
           <img src="{{ url_for('static', filename='img/boton_quimica.png') }}">
-        </button>
+
+        </a>
 
       </div>
 
-    </div>
-
-    <!-- modal info quimica -->
-    <div class="modal fade" id="infoModal" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content p-4">
-
-          <h3>Química y Salud</h3>
-
-          <p>
-            Aprende cómo los compuestos naturales se transforman en energía
-            y cómo las reacciones químicas influyen en nuestra salud y bienestar.
-          </p>
-
-          <button class="btn btn-success" data-bs-dismiss="modal">
-            Cerrar
-          </button>
-
-        </div>
-      </div>
     </div>
 
     <div class="card-blog historia">
@@ -73,7 +50,6 @@
       <!-- titulo -->
       <img class="titulo-img" src="{{ url_for('static', filename='img/titulo_historia.png') }}">
 
-      <!-- introducion -->
       <div class="texto-principal">
         <p>
           Explora la química de los alimentos: desde nutrientes y vitaminas
@@ -81,27 +57,24 @@
         </p>
       </div>
 
-      <!-- imagen centro -->
       <img class="centro" src="{{ url_for('static', filename='img/centro_historia.png') }}">
 
-      <!-- info boton -->
       <div class="info-box">
 
         <p class="info-text">
           Haz click para explorar más información sobre química y salud.
         </p>
 
-        <!-- boton circulo -->
         <button class="circle-btn" data-bs-toggle="modal" data-bs-target="#infoModal">
 
           <img src="{{ url_for('static', filename='img/boton_historia.png') }}">
+
         </button>
 
       </div>
 
     </div>
 
-    <!-- modal info quimica -->
     <div class="modal fade" id="infoModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content p-4">
@@ -123,10 +96,8 @@
 
     <div class="card-blog imc">
 
-      <!-- titulo -->
       <img class="titulo-img" src="{{ url_for('static', filename='img/titulo_calcu.png') }}">
 
-      <!-- introducion -->
       <div class="texto-principal">
         <p>
           Explora la química de los alimentos: desde nutrientes y vitaminas
@@ -134,17 +105,14 @@
         </p>
       </div>
 
-      <!-- imagen centro -->
       <img class="centro" src="{{ url_for('static', filename='img/centro_calcu.png') }}">
 
-      <!-- info boton -->
       <div class="info-box">
 
         <p class="info-text">
           Haz click para explorar más información sobre química y salud.
         </p>
 
-        <!-- boton circulo -->
         <a href="{{ url_for('imc') }}" class="circle-btn">
 
           <img src="{{ url_for('static', filename='img/boton_calcu.png') }}">
@@ -154,8 +122,11 @@
       </div>
 
     </div>
+
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

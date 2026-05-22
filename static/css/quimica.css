@@ -1,0 +1,181 @@
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#edf5e7;
+    min-height:100vh;
+    padding:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+
+.contenedor-principal{
+    width:100%;
+    max-width:1500px;
+    min-height:800px;
+    display:flex;
+    border-radius:25px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+
+.menu-lateral{
+    width:280px;
+    background:linear-gradient(180deg,#cfe8c6,#b8d8b0);
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.menu-lateral h1{
+    text-align:center;
+    color:#486b45;
+    margin-bottom:20px;
+}
+
+
+
+.btn-menu{
+    border:none;
+    padding:18px;
+    border-radius:18px;
+    background:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.4s;
+    font-weight:bold;
+    color:#486b45;
+}
+
+.btn-menu:hover{
+    transform:translateX(8px);
+    background:#deffc4e3;
+}
+
+
+
+.contenido{
+    flex:1;
+    position:relative;
+    overflow:hidden;
+    background:#f8fcf6;
+}
+
+
+
+.panel{
+    position:absolute;
+    width:100%;
+    height:100%;
+    padding:30px;
+    overflow:auto;
+    transform:translateX(100%);
+    opacity:0;
+    transition:0.5s;
+}
+
+.panel.activo{
+    transform:translateX(0);
+    opacity:1;
+}
+
+
+
+h2{
+    color:#5c7c59;
+    margin-bottom:20px;
+    font-size:35px;
+}
+
+p{
+    color:#444;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+
+
+.tabla-quimica{
+    overflow:hidden;
+    border-radius:18px;
+}
+
+.tabla-quimica thead{
+    background:#b8d8b0;
+    color:#2d4731;
+}
+
+.tabla-quimica th{
+    padding:18px !important;
+    text-align:center;
+    border:2px solid white !important;
+}
+
+.tabla-quimica td{
+    padding:18px !important;
+    border:2px solid white !important;
+    vertical-align:middle;
+}
+
+.tabla-quimica tbody tr:nth-child(even){
+    background:#f4fbf1;
+}
+
+.tabla-quimica tbody tr:nth-child(odd){
+    background:#ffffff;
+}
+
+.tabla-quimica tbody tr:hover{
+    background:#dcefd2;
+    transition:0.3s;
+}
+
+
+
+.info-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:20px;
+    border-left:8px solid #589653e0;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+.formula{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    margin-top:20px;
+    font-size:24px;
+    color:#486b45;
+    font-weight:bold;
+    border-left:8px solid #93b88d;
+}
+
+
+
+@media(max-width:850px){
+
+    .contenedor-principal{
+        flex-direction:column;
+    }
+
+    .menu-lateral{
+        width:100%;
+    }
+
+}
