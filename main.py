@@ -10,14 +10,16 @@ def conectar():
         host="localhost",
         user="root",
         password="",
-        database="salud"
+        database="salud",
+        port=3307
     )
     
 def crear_base_datos():
     conexion = mysql.connector.connect(
         host="localhost",
         user="root",
-        password=""
+        password="",
+        port=3307
     )
     cursor = conexion.cursor()
     cursor.execute("CREATE DATABASE IF NOT EXISTS salud")
@@ -52,6 +54,9 @@ def main():
 def principal():
     return render_template("inicio.html")
 
+@app.route("/historia")
+def historia():
+    return render_template("historia.html")
 
 @app.route('/imc', methods=['GET', 'POST'])
 def imc():

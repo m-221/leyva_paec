@@ -76,8 +76,7 @@
       <!-- introducion -->
       <div class="texto-principal">
         <p>
-          Explora la química de los alimentos: desde nutrientes y vitaminas
-          hasta reacciones químicas que ocurren en nuestro cuerpo.
+          Viaja en el tiempo y conoce la historia del nopal, un ingrediente tradicional mexicano lleno de cultura, beneficios y deliciosas recetas saludables.
         </p>
       </div>
 
@@ -88,37 +87,17 @@
       <div class="info-box">
 
         <p class="info-text">
-          Haz click para explorar más información sobre química y salud.
+          Haz click para explorar su historia, usos y una receta saludable.
         </p>
 
         <!-- boton circulo -->
-        <button class="circle-btn" data-bs-toggle="modal" data-bs-target="#infoModal">
+         <a href="{{ url_for('historia') }}" class="circle-btn">
 
           <img src="{{ url_for('static', filename='img/boton_historia.png') }}">
-        </button>
+        </a>
 
       </div>
 
-    </div>
-
-    <!-- modal info quimica -->
-    <div class="modal fade" id="infoModal" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content p-4">
-
-          <h3>Química y Salud</h3>
-
-          <p>
-            Aprende cómo los compuestos naturales se transforman en energía
-            y cómo las reacciones químicas influyen en nuestra salud y bienestar.
-          </p>
-
-          <button class="btn btn-success" data-bs-dismiss="modal">
-            Cerrar
-          </button>
-
-        </div>
-      </div>
     </div>
 
     <div class="card-blog imc">
@@ -129,8 +108,7 @@
       <!-- introducion -->
       <div class="texto-principal">
         <p>
-          Explora la química de los alimentos: desde nutrientes y vitaminas
-          hasta reacciones químicas que ocurren en nuestro cuerpo.
+          Calcula tu indice de Masa Corporal (IMC) de forma rapida y sencilla. Conoce tu estado nutricional segun tu peso y estatura.
         </p>
       </div>
 
@@ -141,7 +119,7 @@
       <div class="info-box">
 
         <p class="info-text">
-          Haz click para explorar más información sobre química y salud.
+          Haz click y descubre recomendaciones personalizadas para mejorar tu salud.
         </p>
 
         <!-- boton circulo -->

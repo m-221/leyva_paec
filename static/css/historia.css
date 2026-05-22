@@ -1,0 +1,152 @@
+.historia-container{
+    padding: 40px;
+}
+
+/* HERO */
+.hero-historia{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 40px;
+
+    margin-bottom: 60px;
+}
+
+.hero-texto{
+    width: 45%;
+}
+
+.hero-texto h1{
+    font-size: 55px;
+    color: #7a4b2a;
+}
+
+.hero-texto p{
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.hero-img{
+    width: 420px;
+}
+
+/* TARJETAS */
+.cards-historia{
+    display: flex;
+    justify-content: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 70px;
+}
+
+.card-info{
+    width: 320px;
+
+    background: #f8f1ea;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card-info img{
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+}
+
+.card-info h3{
+    margin-top: 15px;
+
+    color: #7a4b2a;
+}
+
+/* BOTÓN */
+.btn-card{
+    margin-top: 15px;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 10px;
+
+    background: #c99b6b;
+
+    color: white;
+}
+
+.btn-card:hover{
+    background: #b88858;
+}
+
+/* TIMELINE */
+.timeline{
+    text-align: center;
+}
+
+.timeline h2{
+    color: #7a4b2a;
+
+    margin-bottom: 30px;
+}
+
+.timeline-box{
+    display: flex;
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.timeline-item{
+    width: 260px;
+
+    background: #f8f1ea;
+
+    padding: 20px;
+
+    border-left: 6px solid #c99b6b;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.timeline-item span{
+    font-weight: bold;
+
+    color: #7a4b2a;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px){
+
+    .hero-historia{
+        flex-direction: column;
+    }
+
+    .hero-texto{
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-img{
+        width: 300px;
+    }
+
+}
