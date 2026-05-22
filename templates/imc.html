@@ -99,7 +99,7 @@
                     <button type="submit">Calcular IMC</button>
                 </form>
 
-                <a class="volver" href="/">Volver al inicio</a>
+                <a class="volver" href="{{ url_for('inicio') }}">Volver al inicio</a>
             </div>
 
             <div class="card-grafica">
@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="barra-imc">
-                    <div class="barra-color" style="width: {{ porcentaje_grafica }}%;"></div>
+                    <div class="barra-color" style="width: {{ porcentaje_grafica }}%;" ></div>
                 </div>
 
                 <div class="rangos-grafica">

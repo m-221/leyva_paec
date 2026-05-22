@@ -72,6 +72,15 @@
     margin: 0 auto 20px auto;
 }
 
+.btn-cafe{
+    background:#7a4b2a;
+    color:#fff;
+    padding:10px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    display:inline-block;
+}
+
 /* CONTENIDO PRINCIPAL */
 
 .bloque-info{
