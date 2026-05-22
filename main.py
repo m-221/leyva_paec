@@ -54,9 +54,15 @@ def main():
 def principal():
     return render_template("inicio.html")
 
+<<<<<<< HEAD
 @app.route("/historia")
 def historia():
     return render_template("historia.html")
+=======
+@app.route("/quimica")
+def quimica():
+    return render_template("quimica.html")
+>>>>>>> 1fe09badb8d677f221cce1d36beeff2b3b0afbf5
 
 @app.route('/imc', methods=['GET', 'POST'])
 def imc():
