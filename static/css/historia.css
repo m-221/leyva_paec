@@ -1,152 +1,152 @@
-.historia-container{
+.pagina-historia{
     padding: 40px;
+    background: #fffaf5;
 }
 
-/* HERO */
-.hero-historia{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* HEADER */
 
-    gap: 40px;
-
-    margin-bottom: 60px;
+.header-historia{
+    background: #f5e4c8;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
 }
 
-.hero-texto{
-    width: 45%;
+.header-historia h1{
+    font-size: 60px;
+    color: #6b3f1d;
 }
 
-.hero-texto h1{
-    font-size: 55px;
-    color: #7a4b2a;
-}
-
-.hero-texto p{
+.header-historia p{
     font-size: 22px;
     margin-top: 20px;
 }
 
-.hero-img{
-    width: 420px;
+.img-header{
+    width: 300px;
 }
 
-/* TARJETAS */
-.cards-historia{
+/* CARDS */
+
+.mini-card .card-body{
+    text-align: left;
+}
+
+.mini-card img{
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* LATERAL */
+
+.columna-lateral{
+    width: 28%;
+
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 
-    gap: 30px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 70px;
+    gap: 25px;
 }
 
-.card-info{
-    width: 320px;
-
+.mini-card{
     background: #f8f1ea;
+
+    padding: 25px;
 
     border-radius: 20px;
 
-    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 
     text-align: center;
-
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.card-info img{
+/* IMAGEN */
+.mini-card img{
     width: 100%;
-    height: 180px;
+    max-width: 320px;
 
-    object-fit: cover;
+    border-radius: 20px;
 
+    display: block;
+
+    margin: 0 auto 20px auto;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.bloque-info{
+    background: #f8f1ea;
+    border-radius: 20px;
+}
+
+.bloque-info h2{
+    color: #7a4b2a;
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+
+.uso-card{
+    border-left: 6px solid #c99b6b;
     border-radius: 15px;
 }
+/* RECETAS */
 
-.card-info h3{
-    margin-top: 15px;
-
-    color: #7a4b2a;
+.receta-card{
+    border-radius: 20px;
 }
 
-/* BOTÓN */
-.btn-card{
-    margin-top: 15px;
+/* BOTON */
 
+.btn-receta{
+    margin-top: 15px;
     border: none;
-
     padding: 12px 25px;
-
     border-radius: 10px;
-
     background: #c99b6b;
-
     color: white;
+    transition: 0.3s;
 }
 
-.btn-card:hover{
+.btn-receta:hover{
     background: #b88858;
 }
 
-/* TIMELINE */
-.timeline{
+/* MODAL */
+
+.modal-receta{
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.img-modal-receta{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.titulo-receta{
+    color: #7a4b2a;
+    margin-bottom: 20px;
+}
+
+.modal-body h5{
+    margin-top: 20px;
+    color: #a56d3f;
+}
+
+.modal-body ul,
+.modal-body ol{
+    margin-top: 10px;
+}
+
+/* FOOTER */
+
+.footer-historia{
+    margin-top: 40px;
+    background: #f5e4c8;
+    padding: 25px;
+    border-radius: 20px;
     text-align: center;
-}
-
-.timeline h2{
-    color: #7a4b2a;
-
-    margin-bottom: 30px;
-}
-
-.timeline-box{
-    display: flex;
-    justify-content: center;
-
-    gap: 20px;
-
-    flex-wrap: wrap;
-}
-
-.timeline-item{
-    width: 260px;
-
-    background: #f8f1ea;
-
-    padding: 20px;
-
-    border-left: 6px solid #c99b6b;
-
-    border-radius: 10px;
-
-    text-align: left;
-
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.timeline-item span{
-    font-weight: bold;
-
-    color: #7a4b2a;
-}
-
-/* RESPONSIVE */
-@media(max-width: 900px){
-
-    .hero-historia{
-        flex-direction: column;
-    }
-
-    .hero-texto{
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero-img{
-        width: 300px;
-    }
-
+    font-size: 20px;
 }

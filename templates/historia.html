@@ -7,140 +7,475 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/historia.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
 
 <body>
-    <div class="historia-container">
 
-        <!-- PORTADA -->
-        <section class="hero-historia">
+    <div class="container-fluid pagina-historia">
 
-            <div class="hero-texto">
+        <!-- titulo -->
+        <section class="header-historia shadow-sm">
 
-                <h1>EL NOPAL EN LA HISTORIA</h1>
+            <div class="row align-items-center w-100">
 
-                <p>
-                    Descubre cómo el nopal fue utilizado desde las culturas
-                    antiguas y cómo sigue siendo importante para la alimentación
-                    y la salud actualmente.
-                </p>
+                <div class="col-lg-7">
 
-            </div>
-
-            <img src="{{ url_for('static', filename='img/nopal_principal.png') }}" class="hero-img">
-
-        </section>
-
-        <!-- TARJETAS -->
-        <section class="cards-historia">
-
-            <!-- ORIGEN -->
-            <div class="card-info">
-
-                <img src="{{ url_for('static', filename='img/origen.png') }}">
-
-                <h3>Origen</h3>
-
-                <p>
-                    El nopal era utilizado por culturas prehispánicas como
-                    alimento, medicina y símbolo cultural.
-                </p>
-
-                <button class="btn-card" data-bs-toggle="modal" data-bs-target="#modalOrigen">
-                    Ver más
-                </button>
-
-            </div>
-
-            <!-- BENEFICIOS -->
-            <div class="card-info">
-
-                <img src="{{ url_for('static', filename='img/beneficios.png') }}">
-
-                <h3>Beneficios</h3>
-
-                <p>
-                    Contiene fibra, vitaminas y minerales que ayudan
-                    a mantener una vida saludable.
-                </p>
-
-                <button class="btn-card" data-bs-toggle="modal" data-bs-target="#modalBeneficios">
-                    Ver más
-                </button>
-
-            </div>
-
-            <!-- RECETA -->
-            <div class="card-info">
-
-                <img src="{{ url_for('static', filename='img/receta.png') }}">
-
-                <h3>Receta</h3>
-
-                <p>
-                    Conoce una receta tradicional elaborada con nopales
-                    y utilizada desde épocas antiguas.
-                </p>
-
-                <button class="btn-card" data-bs-toggle="modal" data-bs-target="#modalReceta">
-                    Ver más
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- TIMELINE -->
-        <section class="timeline">
-
-            <h2>Línea del tiempo</h2>
-
-            <div class="timeline-box">
-
-                <div class="timeline-item">
-                    <span>Época prehispánica</span>
-                    <p>Uso medicinal y alimenticio del nopal.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <span>Colonización</span>
-                    <p>El nopal comienza a formar parte de nuevas recetas.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <span>Actualidad</span>
-                    <p>Es considerado un alimento saludable y nutritivo.</p>
-                </div>
-
-            </div>
-
-        </section>
-
-    </div>
-
-    <!-- MODAL ORIGEN -->
-    <div class="modal fade" id="modalOrigen" tabindex="-1">
-
-        <div class="modal-dialog modal-lg">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title">Origen del Nopal</h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal">
-                    </button>
-                </div>
-
-                <div class="modal-body">
+                    <h1>EL NOPAL EN LA HISTORIA</h1>
 
                     <p>
-                        El nopal fue una planta muy importante para las culturas
-                        prehispánicas de México. Era utilizado como alimento,
-                        medicina y símbolo cultural.
+                        Descubre cómo el nopal ha sido utilizado desde las culturas
+                        antiguas hasta la actualidad como alimento, medicina y parte
+                        importante de la vida saludable.
                     </p>
 
+                </div>
+
+                <div class="col-lg-5 text-center">
+
+                    <img src="{{ url_for('static', filename='img/nopal_titulo.png') }}"
+                        class="img-fluid img-header">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTENIDO -->
+        <div class="row g-4 contenido-historia">
+
+            <!-- IZQUIERDA -->
+            <div class="col-lg-4">
+
+                <!-- CARD -->
+                <div class="card mini-card border-0 shadow-sm mb-4">
+
+                    <div class="card-body">
+
+                        <img src="{{ url_for('static', filename='img/nopal_icono.jpg') }}"
+                            class="img-fluid mx-auto d-block mb-3">
+
+                        <h3>¿Qué es el nopal?</h3>
+
+                        <p>
+                            El nopal es una planta originaria de México que fue muy importante para culturas como
+                            los mexicas (aztecas) y otros pueblos mesoamericanos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="card mini-card border-0 shadow-sm">
+
+                    <div class="card-body">
+
+                        <img src="{{ url_for('static', filename='img/beneficios.jpg') }}"
+                            class="img-fluid mx-auto d-block mb-3">
+
+                        <h3>Beneficios</h3>
+
+                        <ul>
+                            <li>Es bajo en calorías y rico en fibra</li>
+                            <li>Ayuda a la digestión</li>
+                            <li>Contiene vitaminas y minerales</li>
+                            <li>Apoya en el control del colesterol</li>
+                            <li>Es útil para personas con diabetes tipo 2 (como apoyo, no reemplazo de tratamiento)</li>
+                            <li>Tiene antioxidantes que protegen las células</li>
+                            <li>Favorece la salud del corazón</li>
+                            <li>Contiene mucha agua, por lo que ayuda a mantenerte hidratado</li>
+                            <li>Es una planta que necesita muy poca agua</li>
+                            <li>Ayuda a conservar el suelo en zonas secas.</li>
+                            <li>Se utiliza en cosméticos (cremas, shampoos)</li>
+                            <li>También en jugos, suplementos y productos naturales.</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="col-lg-8 contenido-principal">
+
+                <!-- ANTES -->
+                <div class="card bloque-info border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+                        <h2>¿Cómo se usaba antes?</h2>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+
+                                <div class="card uso-card border-0 h-100">
+
+                                    <div class="card-body">
+
+                                        <h4>
+                                            <i class="fa-solid fa-utensils" style="color: #c99b6b;"></i>
+                                            Alimento
+                                        </h4>
+
+                                        <p>
+                                            Se comían las pencas tiernas (nopales), también el fruto, llamado tuna, era
+                                            un
+                                            alimento
+                                            básico
+                                            porque era fácil de conseguir y nutritivo.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="card uso-card border-0 h-100">
+
+                                    <div class="card-body">
+
+                                        <h4>
+                                            <i class="fa-solid fa-pills" style="color: #c99b6b;"></i>
+                                            Medicina
+                                        </h4>
+
+                                        <p>
+                                            Se usaba para curar heridas y desinflamar. Se utilizaba como remedio natural
+                                            para
+                                            distintas enfermedades.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="card uso-card border-0 h-100">
+
+                                    <div class="card-body">
+
+                                        <h4>
+                                            <i class="fa-solid fa-palette" style="color: #c99b6b;"></i>
+                                            Colorantes
+                                        </h4>
+
+                                        <p>
+                                            En el nopal crecía un insecto llamado grana cochinilla, de este insecto se
+                                            obtenía un
+                                            tinte rojo intenso.
+                                            Este colorante era muy valioso y se usaba para telas y pinturas
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="card uso-card border-0 h-100">
+
+                                    <div class="card-body">
+
+                                        <h4>
+                                            <i class="fa-solid fa-hammer" style="color: #c99b6b;"></i>
+                                            Construcción
+                                        </h4>
+
+                                        <p>
+                                            La baba del nopal se utilizaba como pegamento natural, se mezclaba con otros
+                                            materiales
+                                            para construir o sellar.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ACTUALMENTE -->
+                <div class="card bloque-info border-0 shadow-sm">
+                    <div class="card-body p-4">
+
+                        <h2>¿Cómo se usa actualmente?</h2>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card uso-card border-0 h-100">
+                                    <div class="card-body">
+
+                                        <h4>
+                                            <i class="fa-solid fa-utensils" style="color: #c99b6b;"></i>
+                                            Alimentación
+                                        </h4>
+
+                                        <p>
+                                            Se consume como verdura en muchos platillos, se usa en jugos, licuados y
+                                            ensaladas.
+                                            También se come la tuna (su fruto).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card uso-card border-0 h-100">
+                                    <div class="card-body">
+
+                                        <h4>
+                                            <i class="fa-solid fa-heart" style="color: #c99b6b;"></i>
+                                            Salud
+                                        </h4>
+
+                                        <p>
+                                            Se usa como apoyo para controlar el azúcar (relacionado con la diabetes tipo
+                                            2).
+                                            Ayuda a
+                                            la digestión por su fibra
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card uso-card border-0 h-100">
+                                    <div class="card-body">
+                                        <h4>🧴 Cosmética</h4>
+                                        <p>
+                                            Ingrediente en cremas, shampoos y jabones. Se usa para hidratar piel y
+                                            cabello.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card uso-card border-0 h-100">
+                                    <div class="card-body">
+                                        <h4><i class="fa-solid fa-earth-americas" style="color: #c99b6b;"></i>
+                                            Medio ambiente
+                                        </h4>
+                                        <p>
+                                            Sirve para reforestar zonas áridas. Ayuda a conservar el suelo y evitar la
+                                            erosión.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card uso-card border-0 h-100">
+                                    <div class="card-body">
+                                        <h4>
+                                            <i class="fa-solid fa-industry" style="color: #c99b6b;"></i>
+                                            Industria
+                                        </h4>
+                                        <p>
+                                            Se usa para hacer productos como: bioplásticos, pinturas ecológicas,
+                                            pegamentos
+                                            naturales
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <!-- RECETAS -->
+                <div class="card bloque-info border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+                        <h2>Recetas con nopales</h2>
+
+                        <div class="row g-4">
+
+                            <!-- RECETA ANTIGUA -->
+                            <div class="col-md-6">
+
+                                <div class="card receta-card border-0 shadow-sm h-100">
+
+                                    <div class="card-body">
+
+                                        <h4>Receta antigua</h4>
+
+                                        <p>
+                                            Una receta tradicional con nopales que antes se hacía de forma menos
+                                            saludable
+                                            es el nopal
+                                            frito con manteca y queso muy salado,
+                                            algo común en muchas casas hace años. Se cocinaba con bastante grasa animal
+                                            y
+                                            mucho queso,
+                                            lo que aumentaba las calorías y la grasa saturada.
+                                        </p>
+
+                                        <button class="btn-receta" data-bs-toggle="modal"
+                                            data-bs-target="#modalAntigua">
+
+                                            Ver receta
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- RECETA ACTUAL -->
+                            <div class="col-md-6">
+
+                                <div class="card receta-card border-0 shadow-sm h-100">
+
+                                    <div class="card-body">
+
+                                        <h4>Receta actual</h4>
+
+                                        <p>
+                                            Modificamos la receta antigua de manera que fuera mas saludable y menos
+                                            dañina
+                                            manteniendo el ingrediente principál que son los nopales.
+                                        </p>
+
+                                        <button class="btn-receta" data-bs-toggle="modal" data-bs-target="#modalActual">
+
+                                            Ver receta
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+                <section class="footer-historia shadow-sm">
+
+                    <p>
+                        El nopal continúa siendo un símbolo de la cultura mexicana y un
+                        alimento importante para una vida saludable.
+                    </p>
+                </section>
+
+
+        <div class="modal fade" id="modalAntigua" tabindex="-1">
+
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+
+                <div class="modal-content modal-receta border-0">
+
+                    <img src="{{ url_for('static', filename='img/receta_antigua.png') }}" class="img-modal-receta">
+
+                    <div class="modal-body p-4">
+
+                        <h2 class="titulo-receta">
+                            Nopales fritos con manteca
+                        </h2>
+
+                        <h5>Ingredientes</h5>
+
+                        <ul>
+                            <li>Nopales cortados en tiras</li>
+                            <li>Manteca de cerdo</li>
+                            <li>Chile seco</li>
+                            <li>Cebolla</li>
+                            <li>Sal</li>
+                            <li>Queso fresco</li>
+                        </ul>
+
+                        <h5>Preparacion</h5>
+
+                        <ol>
+                            <li>Cocina los nopales</li>
+                            <li>Despues se freian en bastante manteca</li>
+                            <li>Agregar chile y cebolla</li>
+                            <li>Servir caliente con queso y tortillas</li>
+                            <li>Esta receta era rica y daba mucha energía,
+                                pero tenía mucha grasa.</li>
+                        </ol>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MODAL RECETA ACTUAL -->
+        <div class="modal fade" id="modalActual" tabindex="-1">
+
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+
+                <div class="modal-content modal-receta border-0">
+
+                    <img src="{{ url_for('static', filename='img/receta_actual.png') }}" class="img-modal-receta">
+
+                    <div class="modal-body p-4">
+
+                        <h2 class="titulo-receta">
+                            Nopales Asados Saludables con Queso y Verduras
+                        </h2>
+
+                        <h5>Ingredientes</h5>
+
+                        <ul>
+                            <li>2 nopales medianos</li>
+                            <li>1 cucharadita de aceite de oliva</li>
+                            <li>1 jitomate picado</li>
+                            <li>¼ de cebolla</li>
+                            <li>Queso panela o fresco bajo en grasa</li>
+                            <li>Orégano y pimienta</li>
+                            <li>Opcional: aguacate o pollo deshebrado</li>
+                        </ul>
+
+                        <h5>Preparacion</h5>
+
+                        <ol>
+                            <li>Lava y corta los nopales.</li>
+                            <li>Ásalos en un comal o sartén antiadherente en lugar de freírlos con mucha grasa.
+                            </li>
+                            <li>Sofríe ligeramente la cebolla y jitomate con muy poco aceite.</li>
+                            <li>Agrega los nopales y mezcla.</li>
+                            <li>Pon encima queso panela y un poco de orégano.</li>
+                            <li>Puedes acompañarlo con tortillas integrales.</li>
+                        </ol>
+                    </div>
                 </div>
 
             </div>
@@ -149,65 +484,8 @@
 
     </div>
 
-    <!-- MODAL BENEFICIOS -->
-    <div class="modal fade" id="modalBeneficios" tabindex="-1">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        <div class="modal-dialog modal-lg">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title">Beneficios del Nopal</h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal">
-                    </button>
-                </div>
-
-                <div class="modal-body">
-
-                    <p>
-                        El nopal aporta fibra, calcio y vitaminas que ayudan
-                        a la digestión y al bienestar del cuerpo.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- MODAL RECETA -->
-    <div class="modal fade" id="modalReceta" tabindex="-1">
-
-        <div class="modal-dialog modal-lg">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title">Receta Tradicional</h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal">
-                    </button>
-                </div>
-
-                <div class="modal-body">
-
-                    <p>
-                        Los nopales podían prepararse asados o acompañados
-                        con maíz y otros ingredientes tradicionales.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
