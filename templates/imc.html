@@ -101,7 +101,9 @@
 
                 <a class="volver" href="{{ url_for('inicio') }}">Volver al inicio</a>
             </div>
-
+            <a class="btn-estadisticas" href="{{ url_for('estadisticas') }}">
+                Ver estadísticas generales
+            </a>
             <div class="card-grafica">
                 <h3>Gráfica del IMC</h3>
 
@@ -111,7 +113,7 @@
                 </div>
 
                 <div class="barra-imc">
-                    <div class="barra-color" style="width: {{ porcentaje_grafica }}%;" ></div>
+                    <div class="barra-color" style="width: {{ porcentaje_grafica }}%;"></div>
                 </div>
 
                 <div class="rangos-grafica">
@@ -232,4 +234,5 @@
     </div>
 
 </body>
+
 </html>
