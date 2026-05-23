@@ -130,7 +130,7 @@ def main():
 # =============================================
 
 @app.route("/inicio")
-def principal():
+def inicio():
 
     return render_template("inicio.html")
 

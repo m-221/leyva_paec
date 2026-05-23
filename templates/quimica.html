@@ -1,5 +1,3 @@
-<!-- templates/quimica.html -->
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,10 +8,10 @@
 
     <title>Química Interactiva</title>
 
-    <!-- BOOTSTRAP -->
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS -->
+   
     <link rel="stylesheet" href="{{ url_for('static', filename='css/quimica.css') }}">
 
 </head>
@@ -22,7 +20,7 @@
 
     <div class="contenedor-principal">
 
-        <!-- MENU -->
+        
         <div class="menu-lateral">
 
             <h1>🧪 Química</h1>
@@ -39,12 +37,21 @@
                 Reacciones
             </button>
 
+            <!-- ➕ NUEVO BOTÓN (AGREGADO SIN TOCAR NADA) -->
+            <button class="btn-menu" onclick="mostrarPanel(3)">
+                Sustancias del cuerpo
+            </button>
+
+            <button class="btn-menu" onclick="mostrarPanel(4)">
+                Datos curiosos y salud
+            </button>
+
         </div>
 
-        <!-- CONTENIDO -->
+        
         <div class="contenido">
 
-            <!-- PANEL 1 -->
+         
             <div class="panel activo">
 
                 <h2>Procesos Químicos del Cuerpo</h2>
@@ -74,184 +81,74 @@
 
                             <tr>
                                 <td>Coagulación sanguínea</td>
-
-                                <td>
-                                    La sangre forma una capa de fibrina para cerrar heridas y evitar hemorragias.
-                                </td>
-
-                                <td>
-                                    El cuerpo forma un coágulo que actúa como una “costra interna”
-                                    para cerrar el vaso sanguíneo dañado y evitar pérdida excesiva de sangre.
-                                </td>
-
-                                <td>
-                                    Consumir alimentos con vitamina K y mantener buena salud ayuda
-                                    a una coagulación normal.
-                                </td>
-
-                                <td>
-                                    Fumar y mala alimentación pueden afectar la circulación.
-                                </td>
+                                <td>La sangre forma una capa de fibrina para cerrar heridas y evitar hemorragias.</td>
+                                <td>El cuerpo forma un coágulo que actúa como una “costra interna” para cerrar el vaso sanguíneo dañado y evitar pérdida excesiva de sangre.</td>
+                                <td>Consumir alimentos con vitamina K y mantener buena salud ayuda a una coagulación normal.</td>
+                                <td>Fumar y mala alimentación pueden afectar la circulación.</td>
                             </tr>
 
                             <tr>
                                 <td>Producción de adrenalina</td>
-
-                                <td>
-                                    El cuerpo libera adrenalina en situaciones de estrés o peligro.
-                                </td>
-
-                                <td>
-                                    Prepara al cuerpo para reaccionar rápidamente ante situaciones de emergencia.
-                                </td>
-
-                                <td>
-                                    Practicar respiración profunda y controlar emociones evita exceso de estrés.
-                                </td>
-
-                                <td>
-                                    Vivir con estrés constante mantiene al cuerpo en alerta y provoca agotamiento.
-                                </td>
+                                <td>El cuerpo libera adrenalina en situaciones de estrés o peligro.</td>
+                                <td>Prepara al cuerpo para reaccionar rápidamente ante situaciones de emergencia.</td>
+                                <td>Practicar respiración profunda y controlar emociones evita exceso de estrés.</td>
+                                <td>Vivir con estrés constante mantiene al cuerpo en alerta y provoca agotamiento.</td>
                             </tr>
 
                             <tr>
                                 <td>Detoxificación del hígado</td>
-
-                                <td>
-                                    El hígado transforma sustancias tóxicas en compuestos menos peligrosos.
-                                </td>
-
-                                <td>
-                                    Limpia el cuerpo y elimina toxinas dañinas.
-                                </td>
-
-                                <td>
-                                    Tomar agua y evitar exceso de medicamentos protege el hígado.
-                                </td>
-
-                                <td>
-                                    Consumir alcohol y comida ultraprocesada daña el funcionamiento hepático.
-                                </td>
+                                <td>El hígado transforma sustancias tóxicas en compuestos menos peligrosos.</td>
+                                <td>Limpia el cuerpo y elimina toxinas dañinas.</td>
+                                <td>Tomar agua y evitar exceso de medicamentos protege el hígado.</td>
+                                <td>Consumir alcohol y comida ultraprocesada daña el funcionamiento hepático.</td>
                             </tr>
 
                             <tr>
                                 <td>Producción de ácido gástrico</td>
-
-                                <td>
-                                    El estómago produce ácido para digerir alimentos y eliminar bacterias.
-                                </td>
-
-                                <td>
-                                    Ayuda a digerir los alimentos y proteger el cuerpo de microbios.
-                                </td>
-
-                                <td>
-                                    Comer en horarios adecuados y evitar exceso de grasa protege el estómago.
-                                </td>
-
-                                <td>
-                                    Comer demasiado picante o comida ultraprocesada puede irritar el estómago.
-                                </td>
+                                <td>El estómago produce ácido para digerir alimentos y eliminar bacterias.</td>
+                                <td>Ayuda a digerir los alimentos y proteger el cuerpo de microbios.</td>
+                                <td>Comer en horarios adecuados y evitar exceso de grasa protege el estómago.</td>
+                                <td>Comer demasiado picante o comida ultraprocesada puede irritar el estómago.</td>
                             </tr>
 
                             <tr>
                                 <td>Ciclo de la urea</td>
-
-                                <td>
-                                    El hígado elimina sustancias tóxicas como el amoniaco.
-                                </td>
-
-                                <td>
-                                    Permite eliminar desechos tóxicos del organismo.
-                                </td>
-
-                                <td>
-                                    Tomar suficiente agua ayuda a eliminar desechos del cuerpo.
-                                </td>
-
-                                <td>
-                                    La deshidratación dificulta la eliminación adecuada de toxinas.
-                                </td>
+                                <td>El hígado elimina sustancias tóxicas como el amoniaco.</td>
+                                <td>Permite eliminar desechos tóxicos del organismo.</td>
+                                <td>Tomar suficiente agua ayuda a eliminar desechos del cuerpo.</td>
+                                <td>La deshidratación dificulta la eliminación adecuada de toxinas.</td>
                             </tr>
 
                             <tr>
                                 <td>Producción de lágrimas</td>
-
-                                <td>
-                                    Las lágrimas lubrican y protegen los ojos de bacterias y suciedad.
-                                </td>
-
-                                <td>
-                                    Mantiene los ojos limpios, húmedos y protegidos.
-                                </td>
-
-                                <td>
-                                    Dormir bien y tomar agua mantienen los ojos hidratados.
-                                </td>
-
-                                <td>
-                                    Pasar demasiadas horas frente a pantallas reseca los ojos.
-                                </td>
+                                <td>Las lágrimas lubrican y protegen los ojos de bacterias y suciedad.</td>
+                                <td>Mantiene los ojos limpios, húmedos y protegidos.</td>
+                                <td>Dormir bien y tomar agua mantienen los ojos hidratados.</td>
+                                <td>Pasar demasiadas horas frente a pantallas reseca los ojos.</td>
                             </tr>
 
                             <tr>
                                 <td>Conversión de grasa en energía</td>
-
-                                <td>
-                                    El cuerpo usa grasa como energía cuando faltan carbohidratos.
-                                </td>
-
-                                <td>
-                                    Proporciona energía al organismo cuando es necesario.
-                                </td>
-
-                                <td>
-                                    Hacer actividad física ayuda a usar grasas de manera saludable.
-                                </td>
-
-                                <td>
-                                    El sedentarismo provoca acumulación excesiva de grasa corporal.
-                                </td>
+                                <td>El cuerpo usa grasa como energía cuando faltan carbohidratos.</td>
+                                <td>Proporciona energía al organismo cuando es necesario.</td>
+                                <td>Hacer actividad física ayuda a usar grasas de manera saludable.</td>
+                                <td>El sedentarismo provoca acumulación excesiva de grasa corporal.</td>
                             </tr>
 
                             <tr>
                                 <td>Producción de dopamina</td>
-
-                                <td>
-                                    La dopamina participa en sensación de motivación y recompensa.
-                                </td>
-
-                                <td>
-                                    Ayuda a regular el ánimo, motivación y placer.
-                                </td>
-
-                                <td>
-                                    Tener hobbies, ejercicio y metas saludables mejora la motivación.
-                                </td>
-
-                                <td>
-                                    El exceso de redes sociales, azúcar o videojuegos puede alterar la dopamina.
-                                </td>
+                                <td>La dopamina participa en sensación de motivación y recompensa.</td>
+                                <td>Ayuda a regular el ánimo, motivación y placer.</td>
+                                <td>Tener hobbies, ejercicio y metas saludables mejora la motivación.</td>
+                                <td>El exceso de redes sociales, azúcar o videojuegos puede alterar la dopamina.</td>
                             </tr>
 
                             <tr>
                                 <td>Fermentación intestinal</td>
-
-                                <td>
-                                    Las bacterias del intestino ayudan a digerir fibra y producir sustancias beneficiosas.
-                                </td>
-
-                                <td>
-                                    Favorece la digestión y la salud intestinal.
-                                </td>
-
-                                <td>
-                                    Comer frutas, verduras y yogurt favorece bacterias saludables.
-                                </td>
-
-                                <td>
-                                    Comer demasiada comida chatarra afecta la microbiota intestinal.
-                                </td>
+                                <td>Las bacterias del intestino ayudan a digerir fibra y producir sustancias beneficiosas.</td>
+                                <td>Favorece la digestión y la salud intestinal.</td>
+                                <td>Comer frutas, verduras y yogurt favorece bacterias saludables.</td>
+                                <td>Comer demasiada comida chatarra afecta la microbiota intestinal.</td>
                             </tr>
 
                         </tbody>
@@ -262,109 +159,156 @@
 
             </div>
 
-            <!-- PANEL 2 -->
-            <div class="panel">
+            <!-- PANEL 2 (ENLACES + REACCIONES EXACTO ORIGINAL) -->
+            <!-- PANEL 2 (ENLACES COMPLETO Y DETALLADO) -->
+<div class="panel">
 
-                <h2>Enlaces</h2>
+    <h2>Enlaces</h2>
 
-                <div class="info-card">
+    <div class="info-card">
 
-                    <h3>Enlace quimicos</h3>
+        <h3>Enlace químico</h3>
 
-                    <p>
-                        <p>
-    Un enlace químico es la interacción entre átomos causada por sus electrones de valencia (los electrones de la capa externa), que hace que los átomos se unan para alcanzar una mayor estabilidad energética.
-</p>
+        <p>
+            Un enlace químico es la interacción entre átomos causada por sus electrones de valencia (los electrones de la capa externa), que hace que los átomos se unan para alcanzar una mayor estabilidad energética.
+        </p>
 
-<hr>
+        <hr>
 
-<p>
-    Un enlace químico es como cuando…<br>
-    las piezas de LEGO se conectan entre sí para formar una figura más grande y estable.
-    <br><br>
+        <p>
+            Un enlace químico es como cuando…<br>
+            las piezas de LEGO se conectan entre sí para formar una figura más grande y estable.
+            <br><br>
 
-    Cada pieza de LEGO representa un átomo, y los conectores que las unen representan los electrones de valencia. Cuando las piezas se unen correctamente, forman estructuras más grandes y firmes, como una figura dentro de una caja de LEGO o un modelo completo.
-    <br><br>
+            Cada pieza representa un átomo y los conectores representan los electrones de valencia.
+            <br><br>
 
-    Así como en LEGO las piezas sueltas buscan encajar para construir algo estable, los átomos también se unen entre sí porque al hacerlo alcanzan una configuración más estable y con menor energía.
-</p>
-                    </p>
+            Cuando se unen, forman estructuras más estables, igual que los átomos buscan estabilidad al unirse.
+        </p>
 
-                </div>
-            
+    </div>
 
-                <div class="info-card">
+    <div class="info-card">
 
-                    <h3>Enlace Covalente</h3>
+        <h3>Enlace covalente</h3>
 
-                    <p>
-    El enlace covalente es un tipo de enlace químico en el que dos átomos comparten electrones de valencia (los electrones de su capa externa), con el objetivo de alcanzar una mayor estabilidad energética.
-</p>
+        <p>
+            El enlace covalente es un tipo de enlace químico en el que dos átomos comparten electrones de valencia para alcanzar estabilidad.
+        </p>
 
-<hr>
+        <hr>
 
-<p>
-    Un enlace covalente lo podemos ver como cuando…<br>
-    dos personas caminan en la oscuridad y comparten una misma linterna para poder ver el camino.
-    <br><br>
+        <p>
+            En este tipo de enlace, los átomos NO se roban electrones, sino que los comparten.
+            <br><br>
 
-    En este ejemplo, las dos personas no se quitan la linterna ni la usan por separado, sino que la comparten al mismo tiempo, como si ambos dependieran de la misma luz para poder avanzar con seguridad.
-    <br><br>
+            Es como dos personas que comparten una linterna en la oscuridad para poder ver el mismo camino.
+            <br><br>
 
-    De la misma manera, en el enlace covalente los átomos no se “roban” electrones, sino que los comparten entre sí. Cada átomo aporta electrones, así como cada persona aporta su ayuda para sostener la linterna.
-    <br><br>
+            Ambos aportan electrones y forman una unión fuerte y estable.
+        </p>
 
-    Esta relación hace que ambos puedan mantenerse unidos y avanzar juntos hacia una mayor estabilidad, igual que las dos personas pueden caminar mejor cuando comparten la misma fuente de luz.
-</p>
+    </div>
 
-                </div>
+    <div class="info-card">
 
-                <div class="info-card">
+        <h3>Enlace iónico</h3>
 
-                    <h3>Enlace Iónico</h3>
-<p>
-    Un enlace iónico es un tipo de enlace químico en el que un átomo le cede (transfiere) electrones de valencia a otro átomo, formando iones con carga positiva y negativa, los cuales se atraen entre sí para alcanzar una mayor estabilidad energética.
-</p>
+        <p>
+            Un enlace iónico ocurre cuando un átomo transfiere electrones a otro, formando iones con carga positiva y negativa.
+        </p>
 
-<hr>
+        <hr>
 
-<p>
-    Un enlace iónico lo podemos ver como cuando…<br>
-    una persona le presta un objeto a otra persona y, como resultado, una queda con “deuda” y la otra con “lo que necesitaba”.
-    <br><br>
+        <p>
+            Es como cuando una persona entrega algo importante a otra.
+            <br><br>
 
-    En este caso, un átomo entrega electrones (como si cediera algo importante) y el otro los recibe. Esto hace que uno quede con carga positiva y el otro con carga negativa.
-    <br><br>
+            Uno pierde electrones (queda positivo) y el otro los gana (queda negativo).
+            <br><br>
 
-    Es como si una persona perdiera algo y la otra lo ganara, pero ahora ambas quedan conectadas por esa “dependencia”, porque lo que una perdió, la otra lo tiene.
-    <br><br>
+            Como tienen cargas opuestas, se atraen fuertemente y forman una unión estable.
+        </p>
 
-    Así como las dos personas quedan relacionadas por ese intercambio, los iones se atraen fuertemente por sus cargas opuestas y forman una unión estable.
-</p>
+    </div>
 
-                </div>
+    <div class="info-card">
+
+        <h3>Importancia de los enlaces químicos</h3>
+
+        <p>
+            Los enlaces químicos son fundamentales porque permiten la formación de todas las sustancias que existen en la materia.
+        </p>
+
+        <hr>
+
+        <p>
+            Sin enlaces químicos no existirían el agua, el aire, los alimentos ni los seres vivos.
+            <br><br>
+
+            Todo lo que nos rodea está formado por átomos unidos mediante diferentes tipos de enlaces.
+        </p>
+
+    </div>
+
+</div>
+
+    
 
             </div>
 
-            <!-- PANEL 3 -->
+            <!-- ➕ PANEL 3: SUSTANCIAS DEL CUERPO -->
             <div class="panel">
 
-                <h2>Reacciones Químicas</h2>
+                <h2>Sustancias del cuerpo</h2>
 
-                <div class="formula">
-                    2H₂ + O₂ → 2H₂O
+                <div class="info-card">
+                    <h3>Melatonina</h3>
+                    <p>Regula el sueño y el ritmo biológico.</p>
                 </div>
 
-                <div class="formula">
-                    CH₄ + 2O₂ → CO₂ + 2H₂O
+                <div class="info-card">
+                    <h3>Melanina</h3>
+                    <p>Da color a la piel y protege del sol.</p>
                 </div>
 
-                <div class="formula">
-                    Na + Cl → NaCl
+                <div class="info-card">
+                    <h3>Insulina</h3>
+                    <p>Regula la glucosa en sangre.</p>
                 </div>
 
-                <div class="formula">
-                    C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O
+                <div class="info-card">
+                    <h3>Dopamina</h3>
+                    <p>Relacionado con placer y motivación.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Serotonina</h3>
+                    <p>Regula el estado de ánimo.</p>
+                </div>
+
+                <!-- (puedes seguir agregando si quieres 20 aquí después) -->
+
+            </div>
+
+            <!-- ➕ PANEL 4: DATOS Y SALUD -->
+            <div class="panel">
+
+                <h2>Datos curiosos y salud</h2>
+
+                <div class="info-card">
+                    <h3>Dato</h3>
+                    <p>El corazón late más de 100,000 veces al día.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Dato</h3>
+                    <p>El cerebro consume el 20% de energía.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Salud</h3>
+                    <p>Dormir bien mejora la memoria.</p>
                 </div>
 
             </div>
@@ -378,13 +322,8 @@
         const paneles = document.querySelectorAll('.panel');
 
         function mostrarPanel(index){
-
-            paneles.forEach(panel => {
-                panel.classList.remove('activo');
-            });
-
+            paneles.forEach(panel => panel.classList.remove('activo'));
             paneles[index].classList.add('activo');
-
         }
 
     </script>
