@@ -14,7 +14,7 @@ def conectar():
         user="root",
         password="",
         database="salud",
-        port=3307
+        port=3306
     )
 
 
@@ -26,7 +26,7 @@ def crear_base_datos():
         host="localhost",
         user="root",
         password="",
-        port=3307
+        port=3306
     )
 
     cursor = conexion.cursor()
