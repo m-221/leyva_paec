@@ -6,14 +6,7 @@
 
     <title>Estadísticas IMC</title>
 
-    <!-- ============================================= -->
-    <!-- BOOTSTRAP -->
-    <!-- ============================================= -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- ============================================= -->
-    <!-- LIBRERÍA PARA GRÁFICAS -->
-    <!-- ============================================= -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
@@ -22,21 +15,13 @@
 
     <div class="container py-5">
 
-        <!-- ============================================= -->
-        <!-- TÍTULO PRINCIPAL -->
-        <!-- ============================================= -->
-
         <h1 class="text-center mb-5">
             📊 Estadísticas Generales IMC
         </h1>
 
-        <!-- ============================================= -->
-        <!-- TARJETAS DE INFORMACIÓN -->
-        <!-- ============================================= -->
-
         <div class="row g-4 mb-5">
 
-            <!-- TOTAL -->
+            <!-- total -->
             <div class="col-md-3">
 
                 <div class="card shadow text-center p-4">
@@ -49,7 +34,7 @@
 
             </div>
 
-            <!-- PROMEDIO IMC -->
+            <!-- promedio imc -->
             <div class="col-md-3">
 
                 <div class="card shadow text-center p-4">
@@ -62,7 +47,7 @@
 
             </div>
 
-            <!-- HOMBRES -->
+            <!-- hombres -->
             <div class="col-md-3">
 
                 <div class="card shadow text-center p-4">
@@ -75,7 +60,7 @@
 
             </div>
 
-            <!-- MUJERES -->
+            <!-- mujeres -->
             <div class="col-md-3">
 
                 <div class="card shadow text-center p-4">
@@ -90,9 +75,7 @@
 
         </div>
 
-        <!-- ============================================= -->
-        <!-- GRÁFICA -->
-        <!-- ============================================= -->
+    
 
         <div class="card shadow p-4 mb-5">
 
@@ -100,14 +83,9 @@
                 Distribución de categorías IMC
             </h2>
 
-            <!-- Canvas donde aparecerá la gráfica -->
             <canvas id="graficaIMC"></canvas>
 
         </div>
-
-        <!-- ============================================= -->
-        <!-- PORCENTAJES -->
-        <!-- ============================================= -->
 
         <div class="card shadow p-4 mb-5">
 
@@ -115,7 +93,7 @@
                 Porcentajes por categoría
             </h2>
 
-            <!-- BAJO PESO -->
+            <!-- bajo peso -->
             <p>
                 <strong>Bajo peso:</strong>
                 {{ p_bajo }}%
@@ -130,7 +108,7 @@
 
             </div>
 
-            <!-- PESO NORMAL -->
+            <!-- peso normal -->
             <p>
                 <strong>Peso normal:</strong>
                 {{ p_normal }}%
@@ -145,7 +123,7 @@
 
             </div>
 
-            <!-- SOBREPESO -->
+            <!-- sobrepeso -->
             <p>
                 <strong>Sobrepeso:</strong>
                 {{ p_sobrepeso }}%
@@ -160,7 +138,7 @@
 
             </div>
 
-            <!-- OBESIDAD -->
+            <!-- obesidad -->
             <p>
                 <strong>Obesidad:</strong>
                 {{ p_obesidad }}%
@@ -177,9 +155,6 @@
 
         </div>
 
-        <!-- ============================================= -->
-        <!-- MENSAJE AUTOMÁTICO -->
-        <!-- ============================================= -->
 
         <div class="alert alert-primary text-center shadow p-4">
 
@@ -189,9 +164,7 @@
 
         </div>
 
-        <!-- ============================================= -->
-        <!-- BOTÓN PARA REGRESAR -->
-        <!-- ============================================= -->
+
 
         <div class="text-center mt-5">
 
@@ -203,22 +176,11 @@
 
     </div>
 
-    <!-- ============================================= -->
-    <!-- SCRIPT DE LA GRÁFICA -->
-    <!-- ============================================= -->
 
     <script>
 
-        // =============================================
-        // OBTENER EL CANVAS
-        // =============================================
 
         const ctx = document.getElementById('graficaIMC');
-
-        // =============================================
-        // CREAR LA GRÁFICA
-        // =============================================
-
         new Chart(ctx, {
 
             type: 'pie',

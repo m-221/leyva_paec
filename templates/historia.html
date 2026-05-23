@@ -97,18 +97,12 @@
 
                 </div>
 
-                <div class="d-flex justify-content-center mt-3">
-                    <a href="{{ url_for('inicio') }}" class="btn btn-cafe">
-                     Volver al inicio
-                    </a>
-                </div>
-
             </div>
 
-            <!-- CONTENIDO PRINCIPAL -->
+         
             <div class="col-lg-8 contenido-principal">
 
-                <!-- ANTES -->
+
                 <div class="card bloque-info border-0 shadow-sm mb-4">
 
                     <div class="card-body p-4">
@@ -218,7 +212,7 @@
 
                 </div>
 
-                <!-- ACTUALMENTE -->
+ 
                 <div class="card bloque-info border-0 shadow-sm">
                     <div class="card-body p-4">
 
@@ -303,14 +297,21 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="d-flex justify-content-center mt-3">
+                                <a href="{{ url_for('inicio') }}" class="btn-cafe">
+                                 Volver al inicio
+                                </a>
+                            </div>
+                            
                         </div>
                     </div>
 
                 </div>
+            </div>
 
 
-
-                <!-- RECETAS -->
+                
                 <div class="card bloque-info border-0 shadow-sm mb-4">
 
                     <div class="card-body p-4">
@@ -319,7 +320,7 @@
 
                         <div class="row g-4">
 
-                            <!-- RECETA ANTIGUA -->
+                            
                             <div class="col-md-6">
 
                                 <div class="card receta-card border-0 shadow-sm h-100">
@@ -352,7 +353,7 @@
 
                             </div>
 
-                            <!-- RECETA ACTUAL -->
+                   
                             <div class="col-md-6">
 
                                 <div class="card receta-card border-0 shadow-sm h-100">
@@ -386,7 +387,7 @@
 
                 </div>
 
-            </div>
+            
 
         </div>
 
@@ -405,7 +406,7 @@
 
                 <div class="modal-content modal-receta border-0">
 
-                    <img src="{{ url_for('static', filename='img/receta_antigua.png') }}" class="img-modal-receta">
+                    <img src="{{ url_for('static', filename='img/receta_antigua.jpg') }}" class="img-modal-receta">
 
                     <div class="modal-body p-4">
 
@@ -443,14 +444,14 @@
 
         </div>
 
-        <!-- MODAL RECETA ACTUAL -->
+        
         <div class="modal fade" id="modalActual" tabindex="-1">
 
             <div class="modal-dialog modal-lg modal-dialog-centered">
 
                 <div class="modal-content modal-receta border-0">
 
-                    <img src="{{ url_for('static', filename='img/receta_actual.png') }}" class="img-modal-receta">
+                    <img src="{{ url_for('static', filename='img/receta_actual.jpg') }}" class="img-modal-receta">
 
                     <div class="modal-body p-4">
 

@@ -5,11 +5,7 @@ app = Flask(__name__)
 
 app.secret_key = '32423j'
 
-
-# =============================================
-# FUNCIÓN PARA CONECTAR A MYSQL
-# =============================================
-
+# funcion para conectar mysql
 def conectar():
 
     return mysql.connector.connect(
@@ -18,14 +14,11 @@ def conectar():
         user="root",
         password="",
         database="salud",
-        port=3306
+        port=3307
     )
 
 
-# =============================================
-# CREAR BASE DE DATOS Y TABLA
-# =============================================
-
+# crear base de datos y tabla
 def crear_base_datos():
 
     conexion = mysql.connector.connect(
@@ -33,23 +26,17 @@ def crear_base_datos():
         host="localhost",
         user="root",
         password="",
-        port=3306
+        port=3307
     )
 
     cursor = conexion.cursor()
 
-    # =============================================
-    # CREAR BASE DE DATOS
-    # =============================================
-
+    # crear base de datos
     cursor.execute("CREATE DATABASE IF NOT EXISTS salud")
 
     cursor.execute("USE salud")
 
-    # =============================================
-    # CREAR TABLA
-    # =============================================
-
+    # crear tabla
     cursor.execute("""
 
         CREATE TABLE IF NOT EXISTS registros_imc (
@@ -72,10 +59,8 @@ def crear_base_datos():
 
     """)
 
-    # =============================================
-    # AGREGAR EDAD SI NO EXISTE
-    # =============================================
-
+    
+    # agregar edad si no existe
     cursor.execute("SHOW COLUMNS FROM registros_imc LIKE 'edad'")
 
     existe_edad = cursor.fetchone()
@@ -90,10 +75,7 @@ def crear_base_datos():
 
         """)
 
-    # =============================================
-    # AGREGAR GÉNERO SI NO EXISTE
-    # =============================================
-
+    # agregar genero si no existe
     cursor.execute("SHOW COLUMNS FROM registros_imc LIKE 'genero'")
 
     existe_genero = cursor.fetchone()
@@ -115,50 +97,33 @@ def crear_base_datos():
     conexion.close()
 
 
-# =============================================
 # PORTADA
-# =============================================
-
 @app.route('/')
 def main():
-
     return render_template('portada.html')
 
 
-# =============================================
-# INICIO
-# =============================================
-
+# inicio
 @app.route("/inicio")
-def principal():
+def inicio():
 
     return render_template("inicio.html")
 
 
-# =============================================
-# HISTORIA
-# =============================================
-
+# historia
 @app.route("/historia")
 def historia():
 
     return render_template("historia.html")
 
 
-# =============================================
-# QUÍMICA
-# =============================================
-
+# quimica
 @app.route("/quimica")
 def quimica():
 
     return render_template("quimica.html")
 
-
-# =============================================
-# CALCULADORA IMC
-# =============================================
-
+# calculadora imc
 @app.route('/imc', methods=['GET', 'POST'])
 def imc():
 
@@ -192,10 +157,7 @@ def imc():
 
     cursor = conexion.cursor(dictionary=True)
 
-    # =============================================
-    # SI EL USUARIO ENVÍA EL FORMULARIO
-    # =============================================
-
+    #si el usuario envia el formulario
     if request.method == 'POST':
 
         try:
@@ -210,10 +172,8 @@ def imc():
 
             altura = float(request.form.get('altura'))
 
-            # =============================================
-            # VALIDACIONES
-            # =============================================
-
+           
+            #validaciones
             if nombre == "" or genero == "":
 
                 error = "Debes llenar todos los campos."
@@ -232,20 +192,18 @@ def imc():
 
             else:
 
-                # =============================================
-                # CALCULAR IMC
-                # =============================================
-
+                
+                # calcular imc
+                
                 resultado = peso / (altura * altura)
 
                 resultado = round(resultado, 2)
 
                 menor_edad = edad < 18
 
-                # =============================================
-                # CLASIFICAR IMC
-                # =============================================
-
+                
+                # clasificar imc
+                
                 if resultado < 18.5:
 
                     categoria = "Bajo peso"
@@ -318,16 +276,9 @@ def imc():
 
                     recomendacion = "Tu IMC indica obesidad grado III."
 
-                # =============================================
-                # BENEFICIOS
-                # =============================================
-
+                
+                
                 beneficios = "Una vida saludable ayuda a prevenir enfermedades."
-
-                # =============================================
-                # IMAGEN
-                # =============================================
-
                 if menor_edad:
 
                     imagen_figura = "img/menor.png"
@@ -336,9 +287,6 @@ def imc():
 
                     imagen_figura = "img/" + clave_img + "_" + genero + ".png"
 
-                # =============================================
-                # PORCENTAJE PARA LA BARRA
-                # =============================================
 
                 porcentaje_grafica = round((resultado / 45) * 100, 2)
 
@@ -346,9 +294,9 @@ def imc():
 
                     porcentaje_grafica = 100
 
-                # =============================================
-                # GUARDAR EN MYSQL
-                # =============================================
+                
+                # guardar en mysql
+                
 
                 cursor.execute("""
 
@@ -376,9 +324,8 @@ def imc():
 
             error = "Revisa los datos. Peso, altura y edad deben ser números."
 
-    # =============================================
-    # OBTENER REGISTROS
-    # =============================================
+    
+    # obtener registros
 
     cursor.execute("SELECT * FROM registros_imc ORDER BY id DESC")
 
@@ -388,9 +335,9 @@ def imc():
 
     conexion.close()
 
-    # =============================================
-    # ENVIAR DATOS AL HTML
-    # =============================================
+    
+    # enviar datos al html
+    
 
     return render_template(
 
@@ -426,10 +373,8 @@ def imc():
     )
 
 
-# =============================================
-# ESTADÍSTICAS GENERALES
-# =============================================
 
+# estadisticas generales
 @app.route("/estadisticas")
 def estadisticas():
 
@@ -437,20 +382,14 @@ def estadisticas():
 
     cursor = conexion.cursor(dictionary=True)
 
-    # =============================================
-    # OBTENER TODOS LOS REGISTROS
-    # =============================================
-
+    # obetner todos los registros
     cursor.execute("SELECT * FROM registros_imc")
 
     registros = cursor.fetchall()
 
     total = len(registros)
-
-    # =============================================
-    # CONTADORES
-    # =============================================
-
+   
+    # contadores
     bajo = 0
 
     normal = 0
@@ -465,10 +404,7 @@ def estadisticas():
 
     suma_imc = 0
 
-    # =============================================
-    # RECORRER REGISTROS
-    # =============================================
-
+    # recorrer registros
     for r in registros:
 
         categoria = r["categoria"]
@@ -479,10 +415,7 @@ def estadisticas():
 
         suma_imc += imc
 
-        # =============================================
-        # CONTAR CATEGORÍAS
-        # =============================================
-
+        # contar categorias
         if "Bajo" in categoria:
 
             bajo += 1
@@ -499,10 +432,7 @@ def estadisticas():
 
             obesidad += 1
 
-        # =============================================
-        # CONTAR GÉNERO
-        # =============================================
-
+        # contar genero
         if genero == "hombre":
 
             hombres += 1
@@ -511,10 +441,7 @@ def estadisticas():
 
             mujeres += 1
 
-    # =============================================
-    # CALCULAR PORCENTAJES
-    # =============================================
-
+    # clacular porcentajes
     if total > 0:
 
         p_bajo = round((bajo / total) * 100, 2)
@@ -539,10 +466,7 @@ def estadisticas():
 
         promedio_imc = 0
 
-    # =============================================
-    # MENSAJE AUTOMÁTICO
-    # =============================================
-
+    # mensaje
     mensaje = ""
 
     if p_obesidad >= 50:
@@ -565,10 +489,7 @@ def estadisticas():
 
     conexion.close()
 
-    # =============================================
-    # ENVIAR DATOS AL HTML
-    # =============================================
-
+    # enviar datos al html
     return render_template(
 
         "estadisticas.html",
@@ -593,10 +514,8 @@ def estadisticas():
     )
 
 
-# =============================================
-# EDITAR REGISTRO
-# =============================================
 
+# editar registro
 @app.route('/editar/<int:id>', methods=['GET', 'POST'])
 def editar(id):
 
@@ -612,17 +531,10 @@ def editar(id):
 
         altura = float(request.form.get('altura'))
 
-        # =============================================
-        # RECALCULAR IMC
-        # =============================================
-
+        # recalcular imc
         imc = peso / (altura * altura)
 
         imc = round(imc, 2)
-
-        # =============================================
-        # CATEGORÍA
-        # =============================================
 
         if imc < 18.5:
 
@@ -640,10 +552,7 @@ def editar(id):
 
             categoria = "Obesidad"
 
-        # =============================================
-        # ACTUALIZAR REGISTRO
-        # =============================================
-
+        # actualizar registro
         cursor.execute("""
 
             UPDATE registros_imc
@@ -671,10 +580,7 @@ def editar(id):
 
         return redirect(url_for('imc'))
 
-    # =============================================
-    # OBTENER REGISTRO
-    # =============================================
-
+    # obtener registro
     cursor.execute("SELECT * FROM registros_imc WHERE id=%s", (id,))
 
     registro = cursor.fetchone()
@@ -685,11 +591,7 @@ def editar(id):
 
     return render_template('editar_imc.html', registro=registro)
 
-
-# =============================================
-# BORRAR REGISTRO
-# =============================================
-
+# borrar registro
 @app.route('/borrar/<int:id>')
 def borrar(id):
 
@@ -707,10 +609,6 @@ def borrar(id):
 
     return redirect(url_for('imc'))
 
-
-# =============================================
-# INICIAR APP
-# =============================================
 
 if __name__ == "__main__":
 

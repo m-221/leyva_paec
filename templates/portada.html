@@ -2,136 +2,165 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vida Saludable</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/portada.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 
 <body>
 
-    <div class="inicio-container">
+    <!-- PORTADA -->
+    <section class="portada">
 
-        <!-- HERO -->
-        <section class="hero">
+        <div class="container">
 
-            <div class="hero-texto">
+            <div class="row align-items-center g-5">
 
-                <h1>VIDA SALUDABLE</h1>
+                <!-- TEXTO -->
+                <div class="col-lg-6 text-center text-lg-start">
 
-                <p>
-                    Proyecto interdisciplinario enfocado en la alimentación,
-                    actividad física, descanso y bienestar.
-                </p>
+                    <h1 class="display-3 fw-bold">
+                        VIDA SALUDABLE
+                    </h1>
 
-                <a href="{{ url_for('principal') }}" class="btn-explorar">
-                    Explorar Proyecto
-                </a>
+                    <p class="lead mt-3">
 
-            </div>
+                        Bienvenido a nuestro proyecto “Vida Saludable”, una página web creada para mostrar la
+                        importancia de la alimentación, el descanso y la actividad física en nuestra vida diaria. Aquí
+                        encontrarás información relacionada con Historia, Química y una calculadora de IMC, combinando
+                        tecnología y aprendizaje de una forma práctica e interactiva.
 
-            <div id="carouselExample" class="carousel slide hero-carousel">
+                    </p>
 
-                <div class="carousel-inner">
+                    <a href="{{ url_for('inicio') }}" class="btn btn-lg mt-3 px-4 text-white"
+                        style="background:#6b4f3b;">
+                        Entrar al Proyecto
+                    </a>
 
-                    <div class="carousel-item active">
-                        <img src="{{ url_for('static', filename='img/inicio.png') }}" class="d-block w-100">
-                    </div>
+                </div>
 
-                    <div class="carousel-item">
-                        <img src="{{ url_for('static', filename='img/salud2.png') }}" class="d-block w-100">
-                    </div>
+                <div class="col-lg-6 text-center">
 
-                    <div class="carousel-item">
-                        <img src="{{ url_for('static', filename='img/salud3.png') }}" class="d-block w-100">
-                    </div>
+                    <img src="{{ url_for('static', filename='img/inicio.png') }}" class="img-fluid rounded">
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
-        <!-- TARJETAS -->
-        <section class="cards-info">
+    </section>
 
-            <!-- OBJETIVO -->
-            <div class="mini-card">
 
-                <img src="{{ url_for('static', filename='img/objetivo.png') }}">
+    <section class="container py-5">
 
-                <h3>Objetivo</h3>
+        <div class="text-center mb-5">
 
-                <p>
-                    Comprender cómo los hábitos saludables benefician
-                    la salud y el desempeño académico.
-                </p>
+            <h2 class="titulo">
+                Nuestro Proyecto
+            </h2>
 
-            </div>
+            <p>
+                Conoce los aspectos principales del proyecto.
+            </p>
 
-            <!-- PROPÓSITO -->
-            <div class="mini-card">
+        </div>
 
-                <img src="{{ url_for('static', filename='img/proposito.png') }}">
+        <div class="row g-4">
 
-                <h3>Propósito</h3>
 
-                <p>
-                    Mostrar información sobre alimentación, descanso,
-                    ejercicio y química del cuerpo.
-                </p>
+            <div class="col-md-6 col-lg-3">
 
-            </div>
+                <div class="card card-info objetivo h-100 p-4 text-center shadow-sm">
 
-            <!-- PROYECTO -->
-            <div class="mini-card">
+                    <h4 class="titulo">
+                        Objetivo
+                    </h4>
 
-                <img src="{{ url_for('static', filename='img/proyecto.png') }}">
+                    <p>
+                        Crear una interfaz gráfica en Python conectada a una base de datos para mostrar información
+                        sobre alimentación saludable, descanso, actividad física y química del cuerpo.
+                    </p>
 
-                <h3>Proyecto</h3>
-
-                <p>
-                    Desarrollo de una interfaz gráfica en Python
-                    conectada a una base de datos SQL.
-                </p>
-
-            </div>
-
-        </section>
-
-        <!-- INTEGRANTES -->
-        <section class="integrantes">
-
-            <h2>Integrantes</h2>
-
-            <div class="integrantes-box">
-
-                <div class="persona">
-                    <img src="{{ url_for('static', filename='img/user.png') }}">
-                    <p>Nombre 1</p>
-                </div>
-
-                <div class="persona">
-                    <img src="{{ url_for('static', filename='img/user.png') }}">
-                    <p>Nombre 2</p>
-                </div>
-
-                <div class="persona">
-                    <img src="{{ url_for('static', filename='img/user.png') }}">
-                    <p>Nombre 3</p>
                 </div>
 
             </div>
 
-        </section>
+            <div class="col-md-6 col-lg-3">
 
-    </div>
+                <div class="card card-info funcionamiento h-100 p-4 text-center shadow-sm">
 
+                    <h4 class="titulo">
+                        Funcionamiento
+                    </h4>
+
+                    <p>
+                        Nuestro proyecto es una interfaz gráfica en Python con Flask que incluye apartados de Historia,
+                        Química y una calculadora de IMC conectada a una base de datos para almacenar y mostrar
+                        resultados de forma visual.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card card-info impacto h-100 p-4 text-center shadow-sm">
+
+                    <h4 class="titulo">
+                        Impacto Social
+                    </h4>
+
+                    <p>
+                        Este proyecto busca crear conciencia sobre la importancia de la alimentación, el descanso y la
+                        actividad física, motivando a los estudiantes a mejorar sus hábitos y cuidar su salud.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card card-info reflexion h-100 p-4 text-center shadow-sm">
+
+                    <h4 class="titulo">
+                        Reflexión
+                    </h4>
+
+                    <p>
+                        Este proyecto nos permitió relacionar la tecnología con la salud, aplicando conocimientos de
+                        distintas materias para crear una página web útil y comprender la importancia de mantener
+                        hábitos saludables.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="container pb-5">
+
+        <div class="bg-white rounded shadow-sm p-5 text-center">
+
+            <h3 class="titulo">
+                “La salud es el resultado de cuidar cuerpo y mente.”
+            </h3>
+
+        </div>
+
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

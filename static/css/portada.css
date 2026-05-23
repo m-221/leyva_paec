@@ -1,149 +1,36 @@
-.inicio-container{
-    padding: 40px;
-}
+        body{
+            background:#f5f3ef;
+        }
 
-/* HERO */
-.hero{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+        .portada{
+            background:#b7dcb5;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+        }
 
-    margin-bottom: 60px;
-}
+        .titulo{
+            color:#6b4f3b;
+            font-weight:bold;
+        }
 
-.hero-texto{
-    width: 45%;
-}
+        .card-info{
+            border:none;
+            border-radius:18px;
+        }
 
-.hero-texto h1{
-    font-size: 60px;
-    font-weight: bold;
-}
+        .objetivo{
+            background:#d8f3dc;
+        }
 
-.hero-texto p{
-    font-size: 22px;
-    margin: 20px 0;
-}
+        .funcionamiento{
+            background:#dbeeff;
+        }
 
-/* BOTÓN */
-.btn-explorar{
-    display: inline-block;
+        .impacto{
+            background:#f3dfcf;
+        }
 
-    padding: 15px 35px;
-
-    background: #93c47d;
-    color: white;
-
-    border-radius: 10px;
-
-    text-decoration: none;
-
-    font-size: 20px;
-}
-
-.btn-explorar:hover{
-    background: #7fb36a;
-}
-
-/* CARRUSEL */
-.hero-carousel{
-    width: 500px;
-}
-
-.hero-carousel img{
-    border-radius: 20px;
-    height: 350px;
-    object-fit: cover;
-}
-
-/* TARJETAS */
-.cards-info{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 60px;
-}
-
-.mini-card{
-    width: 300px;
-
-    background: #f7fbf3;
-
-    border-radius: 15px;
-
-    padding: 20px;
-
-    text-align: center;
-
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.mini-card img{
-    width: 100%;
-    height: 180px;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-}
-
-.mini-card h3{
-    margin-top: 15px;
-}
-
-/* INTEGRANTES */
-.integrantes{
-    text-align: center;
-}
-
-.integrantes-box{
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-
-    margin-top: 30px;
-
-    flex-wrap: wrap;
-}
-
-.persona{
-    background: #f7fbf3;
-
-    padding: 20px;
-
-    border-radius: 15px;
-
-    width: 180px;
-
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.persona img{
-    width: 100px;
-}
-
-/* RESPONSIVE */
-@media(max-width: 900px){
-
-    .hero{
-        flex-direction: column;
-    }
-
-    .hero-texto{
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero-carousel{
-        width: 100%;
-    }
-
-    .hero-texto h1{
-        font-size: 40px;
-    }
-
-}
+        .reflexion{
+            background:#eee1f7;
+        }
